@@ -9,7 +9,11 @@ class Employee {
     private $employeeType;
 
     public function save(){
-            return "";
+            new EmployeeRespository().save($this);
+    }
+
+    public function calculateTax(){
+                new TaxCalculator().calculateTax($this);
     }
 
     /*
@@ -29,13 +33,6 @@ class Employee {
     public function setEmployeeId($employeeId)
     {
         $this->employeeId = $employeeId;
-    }
-    /**
-     * @return mixed
-     */
-    public function getEmployeeId()
-    {
-        return $this->employeeId;
     }
 
     /**
